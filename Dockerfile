@@ -1,16 +1,16 @@
 # 构建阶段
-FROM node:18-alpine AS builder
+FROM node:alpine AS builder
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
-
-COPY . .
-RUN yarn build
+RUN apk add git && \
+git clone https://github.com/ShouChenICU/FastSend fs && \
+cd fs && \
+yarn install && \
+yarn build
 
 # 生产阶段
-FROM node:18-alpine
+FROM node:alpine
 
 WORKDIR /app
 
