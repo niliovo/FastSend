@@ -15,7 +15,7 @@ FROM node:alpine
 WORKDIR /app
 
 # 从构建阶段复制构建后的文件
-COPY --from=builder /app/.output /app
+COPY --from=builder /app/fs/.output /app
 
 # 暴露端口
 EXPOSE 3000
