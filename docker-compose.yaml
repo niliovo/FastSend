@@ -7,8 +7,6 @@ services:
     restart: always
     ports:
       - 3000:3000
-    volumes:
-      - /CHANGE_PATH/fastsend/count.db:/app/count.db
     environment:
       TZ: "Asia/Shanghai"
       NODE_ENV: production
