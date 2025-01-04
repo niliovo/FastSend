@@ -6,8 +6,8 @@ on:
   watch:
     types: started
 #  workflow_dispatch:
-  push:
-    branches: [ main ]
+#  push:
+#    branches: [ main ]
 #  pull_request:
 #    branches: [ main ]
 

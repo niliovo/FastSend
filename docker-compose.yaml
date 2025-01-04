@@ -1,12 +1,14 @@
-version: '3.8'
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=production
-    command: node server/index.mjs
 
+  fastsend:
+    image: niliaerith/fastsend
+    container_name: fastsend
+    hostname: fastsend
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - /CHANGE_PATH/fastsend/count.db:/app/count.db
+    environment:
+      TZ: "Asia/Shanghai"
+      NODE_ENV: production
